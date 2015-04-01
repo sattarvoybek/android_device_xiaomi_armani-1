@@ -1,3 +1,7 @@
+# Device
+ro.product.device=armani
+ro.product.model=Redmi 1s
+ro.build.product=armani
 
 # Audio
 ro.qc.sdk.audio.ssr=false
