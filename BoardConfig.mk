@@ -44,6 +44,11 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 -
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-smd"
 
+#Optimizations
+TARGET_USE_O_LEVEL_3=true
+LIQUIFY=true
+USE_PIPE=true
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_FM := true
