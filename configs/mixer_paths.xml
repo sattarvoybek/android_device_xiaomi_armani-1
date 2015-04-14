@@ -812,8 +812,8 @@
     <path name="headphones">
         <path name="headphones-lite" />
         <ctl name="COMP1 Switch" value="1" />
-        <ctl name="RX1 Digital Volume" value="82" />
-        <ctl name="RX2 Digital Volume" value="82" />
+        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX2 Digital Volume" value="84" />
     </path>
 
     <path name="headphones-lite-skuf">

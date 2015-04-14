@@ -151,5 +151,21 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 TARGET_USES_QCOM_WCNSS_QMI := true
 
+#SOKP Optimizations Flags
+USE_HOST_4_8 := true
+SOKP_O3 := true
+SOKP_STRICT := true
+SOKP_KRAIT := true
+SOKP_GRAPHITE := true
+SOKP_PIPE := true
+TARGET_TC_ROM := 4.8-sm
+TARGET_TC_KERNEL := 4.10-sm
+TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
+GCC_OPTIMIZATION_LEVELS := OPT4 
+
+#include sabermod optimizations
+-include vendor/sokp/config/sm.mk
+
 # inherit from the proprietary version
 -include vendor/xiaomi/armani/BoardConfigVendor.mk
