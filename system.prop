@@ -1,3 +1,5 @@
+#Device
+ro.build.product=armani
 
 # Audio
 ro.qc.sdk.audio.ssr=false
@@ -46,6 +48,3 @@ persist.radio.msgtunnel.start=false
 persist.radio.multisim.config=dsds
 persist.radio.rat_on=combine
 ro.telephony.call_ring.multiple=false
-
-# OTA
-cm.updater.uri=http://ota.randomdroids.com/api

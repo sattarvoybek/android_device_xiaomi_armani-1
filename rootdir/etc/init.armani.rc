@@ -375,7 +375,7 @@ service charger /sbin/healthd -c
 
 on property:sys.boot_completed=1
     # Enable Power modes
-    write /sys/module/lpm_levels/enable_low_power/l2 4
+    write /sys/module/lpm_levels/enable_low_power/l1 2
     write /sys/module/msm_pm/modes/cpu0/power_collapse/suspend_enabled 1
     write /sys/module/msm_pm/modes/cpu1/power_collapse/suspend_enabled 1
     write /sys/module/msm_pm/modes/cpu2/power_collapse/suspend_enabled 1
@@ -410,13 +410,13 @@ on property:init.svc.bootanim=stopped
     write /sys/devices/system/cpu/cpufreq/ondemand/optimal_freq 300000
     write /sys/devices/system/cpu/cpufreq/ondemand/sync_freq 300000
     write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold_any_cpu_load 80
-    start mpdecision
+    write /sys/module/intelli_plug/parameters/intell_plug_active 1
 
 # CyanogenMod Performance Profiles
 
 # Powersave
 on property:sys.perf.profile=0
-    stop mpdecision
+    write /sys/module/intelli_plug/parameters/intell_plug_active 0
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
@@ -430,11 +430,11 @@ on property:sys.perf.profile=0
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1190400
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor powersave
     write /sys/class/devfreq/qcom,cpubw.56/governor powersave
-    start mpdecision
+    write /sys/module/intelli_plug/parameters/intell_plug_active 1
 
 # Balanced
 on property:sys.perf.profile=1
-    stop mpdecision
+    write /sys/module/intelli_plug/parameters/intell_plug_active 0
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
@@ -448,11 +448,11 @@ on property:sys.perf.profile=1
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1401600
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
     write /sys/class/devfreq/qcom,cpubw.56/governor msm_cpufreq
-    start mpdecision
+    write /sys/module/intelli_plug/parameters/intell_plug_active 1
 
 # Performance
 on property:sys.perf.profile=2
-    stop mpdecision
+    write /sys/module/intelli_plug/parameters/intell_plug_active 0
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
