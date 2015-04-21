@@ -58,7 +58,7 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # Encryption
-TARGET_HW_DISK_ENCRYPTION := true
+#TARGET_HW_DISK_ENCRYPTION := true
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 16777216
@@ -97,7 +97,7 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Hardware tunables
-BOARD_HARDWARE_CLASS := device/xiaomi/armani/cmhw/
+#BOARD_HARDWARE_CLASS := device/xiaomi/armani/cmhw/
 
 # Init
 TARGET_UNIFIED_DEVICE := true

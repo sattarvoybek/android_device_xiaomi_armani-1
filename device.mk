@@ -14,6 +14,10 @@
 # limitations under the License.
 #
 
+
+# Temporary workaround
+#$(shell mkdir -p $(OUT)/target/product/armani/obj/KERNEL_OBJ)
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
